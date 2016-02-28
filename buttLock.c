@@ -26,21 +26,28 @@ static void window_load(Window* window)
 {
   Layer* window_layer = window_get_root_layer(window);
 
-  g_date_text_layer = text_layer_create(GRect(8, 68, 130, 28));
+  // x offset is used for different form factors to display time correctly
+  int x_offset = 0;
+      
+  #if defined(PBL_PLATFORM_CHALK)
+    x_offset = 15;
+  #endif
+
+  g_date_text_layer = text_layer_create(GRect(8+x_offset, 68, 130, 28));
   text_layer_set_font(g_date_text_layer, fonts_get_system_font(FONT_KEY_ROBOTO_CONDENSED_21));
   text_layer_set_text_color(g_date_text_layer, GColorWhite);
   text_layer_set_background_color(g_date_text_layer, GColorBlack);
   text_layer_set_text_alignment(g_date_text_layer, GTextAlignmentLeft);
   layer_add_child(window_layer, text_layer_get_layer(g_date_text_layer));
 
-  g_time_text_layer = text_layer_create(GRect(7, 92, 130, 49));
+  g_time_text_layer = text_layer_create(GRect(7+x_offset, 92, 130, 49));
   text_layer_set_font(g_time_text_layer, fonts_get_system_font(FONT_KEY_ROBOTO_BOLD_SUBSET_49));
   text_layer_set_text_color(g_time_text_layer, GColorWhite);
   text_layer_set_background_color(g_time_text_layer, GColorBlack);
   text_layer_set_text_alignment(g_time_text_layer, GTextAlignmentLeft);  
   layer_add_child(window_layer, text_layer_get_layer(g_time_text_layer));
 
-  GRect line_frame = GRect(8, 97, 139, 2);
+  GRect line_frame = GRect(8+x_offset, 97, 139, 2);
   g_line_layer = layer_create(line_frame);
   layer_set_update_proc(g_line_layer, line_layer_update_callback);
   layer_add_child(window_layer, g_line_layer);
