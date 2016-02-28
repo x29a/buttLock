@@ -28,14 +28,14 @@ static void window_load(Window* window)
 
   g_date_text_layer = text_layer_create(GRect(8, 68, 130, 28));
   text_layer_set_font(g_date_text_layer, fonts_get_system_font(FONT_KEY_ROBOTO_CONDENSED_21));
-  text_layer_set_text_color(g_date_text_layer, GColorClear);
+  text_layer_set_text_color(g_date_text_layer, GColorWhite);
   text_layer_set_background_color(g_date_text_layer, GColorBlack);
   text_layer_set_text_alignment(g_date_text_layer, GTextAlignmentLeft);
   layer_add_child(window_layer, text_layer_get_layer(g_date_text_layer));
 
   g_time_text_layer = text_layer_create(GRect(7, 92, 130, 49));
   text_layer_set_font(g_time_text_layer, fonts_get_system_font(FONT_KEY_ROBOTO_BOLD_SUBSET_49));
-  text_layer_set_text_color(g_time_text_layer, GColorClear);
+  text_layer_set_text_color(g_time_text_layer, GColorWhite);
   text_layer_set_background_color(g_time_text_layer, GColorBlack);
   text_layer_set_text_alignment(g_time_text_layer, GTextAlignmentLeft);  
   layer_add_child(window_layer, text_layer_get_layer(g_time_text_layer));
