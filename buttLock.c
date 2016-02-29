@@ -28,10 +28,10 @@ static void window_load(Window* window)
 
   // x offset is used for different form factors to display time correctly
   int x_offset = 0;
-      
-  #if defined(PBL_PLATFORM_CHALK)
-    x_offset = 15;
-  #endif
+
+#if defined(PBL_PLATFORM_CHALK)
+  x_offset = 15;
+#endif
 
   g_date_text_layer = text_layer_create(GRect(8+x_offset, 68, 130, 28));
   text_layer_set_font(g_date_text_layer, fonts_get_system_font(FONT_KEY_ROBOTO_CONDENSED_21));
@@ -79,15 +79,14 @@ static void window_unload(Window* window)
 }
 
 static void init(void) 
-{
-
+{ 
   g_window = window_create();
   window_set_click_config_provider(g_window, click_config_provider);
   window_set_window_handlers(g_window, (WindowHandlers) 
-  {
-    .load = window_load,
-    .unload = window_unload,
-  });
+      {
+      .load = window_load,
+      .unload = window_unload,
+      });
 
   window_set_background_color(g_window, GColorBlack);
   window_stack_push(g_window, false);  
