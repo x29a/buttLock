@@ -1,0 +1,32 @@
+{
+    "appKeys": {},
+    "capabilities": [
+        ""
+    ],
+    "companyName": "x29a",
+    "enableMultiJS": true,
+    "longName": "buttLock",
+    "projectType": "native",
+    "resources": {
+        "media": [
+            {
+                "file": "images/logo.png",
+                "menuIcon": true,
+                "name": "LOGO",
+                "type": "png"
+            }
+        ]
+    },
+    "sdkVersion": "3",
+    "shortName": "buttLock",
+    "targetPlatforms": [
+        "aplite",
+        "basalt",
+        "chalk"
+    ],
+    "uuid": "4de79b73-c743-4b70-a2ca-c31d23a5dc4e",
+    "versionLabel": "2.2",
+    "watchapp": {
+        "watchface": false
+    }
+}
