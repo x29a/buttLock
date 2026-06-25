@@ -11,6 +11,32 @@ Unfortunately, it is not possible to override the long press back event, otherwi
 
 The display is inspired by the Simplicity Watchface (https://github.com/pebble/pebble-sdk-examples/tree/master/watchfaces/simplicity) and the Button Lock Watchapp (https://apps.getpebble.com/applications/543f02a145b1f75605000010).
 
-Compilation was done via CloudPebble (https://cloudpebble.net/).
+## Supported platforms
+
+- Pebble / Pebble Steel (`aplite`)
+- Pebble Time / Pebble Time Steel (`basalt`)
+- Pebble Time Round (`chalk`)
+- Pebble 2 (`diorite`)
+- Pebble 2 Duo (`flint`, requires PebbleOS 4.9.127 or newer)
+- Pebble Time 2 (`emery`)
+- Pebble Round 2 (`gabbro`)
+
+## Building
+
+Install the [Rebble SDK](https://developer.rebble.io/) and pebble-tool:
+
+```bash
+uv tool install pebble-tool --python 3.13
+pebble sdk install latest
+```
+
+Build and install on an emulator:
+
+```bash
+pebble build
+pebble install --emulator aplite
+```
+
+Replace `aplite` with any supported platform (`basalt`, `chalk`, `diorite`, `flint`, `emery`, `gabbro`).
 
 If you like this WatchApp you can Flattr it (https://flattr.com/submit/auto?user_id=x29a&url=https%3A%2F%2Fgithub.com%2Fx29a%2FbuttLock).

@@ -16,6 +16,7 @@ def options(ctx):
 
 def configure(ctx):
     ctx.load('pebble_sdk')
+    ctx.pbl_suppress_newer_gcc_warnings()
 
 
 def build(ctx):
@@ -38,4 +39,4 @@ def build(ctx):
             binaries.append({'platform': p, 'app_elf': app_elf})
 
     ctx.set_group('bundle')
-    ctx.pbl_bundle(binaries=binaries, js=ctx.path.ant_glob('src/js/**/*.js'), js_entry_file='src/js/app.js')
+    ctx.pbl_bundle(binaries=binaries)
