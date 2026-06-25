@@ -23,7 +23,17 @@ The display is inspired by the Simplicity Watchface (https://github.com/pebble/p
 
 ## Building
 
-Install the [Rebble SDK](https://developer.rebble.io/) and pebble-tool:
+Build with Docker (no local SDK install required):
+
+```bash
+make docker-verify
+```
+
+This pulls `ghcr.io/skylord123/docker-coredevices-pebble-tool`, builds the app, and checks that platform binaries are present in `build/pebble.pbw`.
+
+`gabbro` (Pebble Round 2) requires Pebble SDK 4.9.127 or newer. The current Docker image ships SDK 4.9.77, which builds the other six platforms. On PebbleOS 4.x, the `chalk` binary is scaled automatically on Round 2 watches. For a native `gabbro` binary in the `.pbw`, build with a newer SDK.
+
+Alternatively, install the [Rebble SDK](https://developer.rebble.io/) locally:
 
 ```bash
 uv tool install pebble-tool --python 3.13

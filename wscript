@@ -16,7 +16,8 @@ def options(ctx):
 
 def configure(ctx):
     ctx.load('pebble_sdk')
-    ctx.pbl_suppress_newer_gcc_warnings()
+    if hasattr(ctx, 'pbl_suppress_newer_gcc_warnings'):
+        ctx.pbl_suppress_newer_gcc_warnings()
 
 
 def build(ctx):
